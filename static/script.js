@@ -49,7 +49,7 @@ let companyData = {
         },
         {
             name: "Donnés F",
-            description: "Lorem Ipsum"
+            // description: "Lorem Ipsum"
         },
         {
             name: "Donnés B",
@@ -89,7 +89,6 @@ function setCompanyName() {
 
 function setHumanResources() {
     let humanResourceList = document.querySelector('#humanResources');
-    console.log(humanResourceList);
     for (const human of companyData.rescources.human) {
         humanResourceList.innerHTML += `<li>${human.name} ${human.surname}</li>`
     }
@@ -97,7 +96,6 @@ function setHumanResources() {
 
 function setMaterialResources() {
     let materialResourceList = document.querySelector('#materialResources');
-    console.log(materialResourceList);
     for (const material of companyData.rescources.material) {
         materialResourceList.innerHTML += `<li>${material.quantity} ${material.name}</li>`
     }
@@ -105,9 +103,15 @@ function setMaterialResources() {
 
 function setSoftwareResources() {
     let softwareResourceList = document.querySelector('#softwareResources');
-    console.log(softwareResourceList);
     for (const software of companyData.rescources.software) {
         softwareResourceList.innerHTML += `<li>${software.quantity} ${software.name}</li>`
+    }
+}
+
+function setData() {
+    let dataList = document.querySelector('#dataList');
+    for (const data of companyData.data) {
+        dataList.innerHTML += `<li><strong>${data.name}</strong>${data.description === undefined ? "" : " : " + data.description}</li>`
     }
 }
 
@@ -116,6 +120,7 @@ function init() {
     setHumanResources();
     setMaterialResources();
     setSoftwareResources();
+    setData();
 }
 
 window.addEventListener('load', init);
