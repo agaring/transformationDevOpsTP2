@@ -82,21 +82,40 @@ let companyData = {
 
 function setCompanyName() {
     let companyNamePlaceholders = document.querySelectorAll('.companyName');
-    for (const placeholder of companyNamePlaceholders){
+    for (const placeholder of companyNamePlaceholders) {
         placeholder.textContent = companyData.companyName;
     }
 }
 
-function setHumanResources(){
+function setHumanResources() {
     let humanResourceList = document.querySelector('#humanResources');
     console.log(humanResourceList);
-    for (const human of companyData.rescources.human){
+    for (const human of companyData.rescources.human) {
         humanResourceList.innerHTML += `<li>${human.name} ${human.surname}</li>`
     }
 }
+
+function setMaterialResources() {
+    let materialResourceList = document.querySelector('#materialResources');
+    console.log(materialResourceList);
+    for (const material of companyData.rescources.material) {
+        materialResourceList.innerHTML += `<li>${material.quantity} ${material.name}</li>`
+    }
+}
+
+function setSoftwareResources() {
+    let softwareResourceList = document.querySelector('#softwareResources');
+    console.log(softwareResourceList);
+    for (const software of companyData.rescources.software) {
+        softwareResourceList.innerHTML += `<li>${software.quantity} ${software.name}</li>`
+    }
+}
+
 function init() {
     setCompanyName();
     setHumanResources();
+    setMaterialResources();
+    setSoftwareResources();
 }
 
 window.addEventListener('load', init);
