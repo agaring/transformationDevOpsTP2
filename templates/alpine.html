@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TP3 - Transformation DevOps</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script defer src="{{ url_for('static', filename='alpine.3.10.5.min.js') }}"></script>
+</head>
+<body x-data='{
+    companyName: "New Horizon",
+    rescources: {
+        human: [
+            {
+                name: "Arnaud",
+                surname: "Garing"
+            },
+            {
+                name: "John",
+                surname: "Doe"
+            },
+            {
+                name: "Mary",
+                surname: "Sue"
+            }
+        ],
+        material: [
+            {
+                name: "Podomètre",
+                quantity: 24
+            },
+            {
+                name: "Balance",
+                quantity: 12
+            },
+            {
+                name: "Tensiomètres",
+                quantity: 67
+            }
+        ],
+        software: [
+            {
+                name: "Licence logicielles Pycharm",
+                quantity: 25
+            },
+            {
+                name: "Abonnement Entreprise Gitlab",
+                quantity: 1
+            }
+        ]
+    },
+    data: [
+        {
+            name: "Donnés A",
+            description: "Lorem Ipsum"
+        },
+        {
+            name: "Donnés F"
+            // description: "Lorem Ipsum"
+        },
+        {
+            name: "Donnés B",
+            description: "Lorem Ipsum"
+        },
+        {
+            name: "Donnés G2",
+            description: "Lorem Ipsum"
+        }
+    ],
+    process: [
+        {
+            name: "Processus A",
+            description: "Lorem Ipsum"
+        },
+        {
+            name: "Processus 556",
+            description: "Lorem Ipsum"
+        },
+        {
+            name: "Processus B54"
+            // description: "Lorem Ipsum"
+        },
+        {
+            name: "Processus Z6",
+            description: "Lorem Ipsum"
+        }
+    ]
+}'>
+
+<h1 x-text="companyName"></h1>
+<p><span x-text="companyName" class="companyName"></span> est une entreprise développement logicielle spécialisé dans la télésurveillance médicale</p>
+
+<h2>Ressources</h2>
+<h3>Ressources humaines</h3>
+<ul id="humanResources">
+    <template x-for="r in rescources.human">
+        <li x-text="r.name + ' ' + r.surname"></li>
+    </template>
+</ul>
+<h3>Ressources matérieles</h3>
+<ul id="materialResources">
+    <template x-for="r in rescources.material">
+        <li x-text="r.quantity + ' ' + r.name"></li>
+    </template>
+</ul>
+<h3>Ressource logiciel</h3>
+<ul id="softwareResources">
+    <template x-for="r in rescources.software">
+        <li x-text="r.quantity + ' ' + r.name"></li>
+    </template>
+</ul>
+
+<h2>Données</h2>
+<ul id="dataList">
+    <template x-for="d in data">
+        <li x-text="d.name + (d.description === undefined ? '' : ' : ' + d.description)"></li>
+    </template>
+</ul>
+
+<h2>Processus</h2>
+<ul id="processList">
+    <template x-for="p in process">
+        <li x-text="p.name + (p.description === undefined ? '' : ' : ' + p.description)"></li>
+    </template>
+</ul>
+
+</body>
+</html>

@@ -8,5 +8,10 @@ def home():
     return render_template('base.html')
 
 
+@app.route('/alpine')
+def alpine():
+    return render_template('alpine.html')
+
+
 if __name__ == '__main__':
     app.run()
