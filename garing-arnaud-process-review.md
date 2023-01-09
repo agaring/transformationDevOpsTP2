@@ -12,7 +12,7 @@ Modalités du rendu :
 * Document nommé \<nom>-\<prenom>-process-review
 * Document à créer/copier/stocker dans le sous-dossier "Process-Review" à l'adresse https://tiny.cc/maalsi22-24-data
 
-# Rendu
+# Rendu 3.1
 
 ### 1 : Analyse des besoins
 
@@ -20,7 +20,7 @@ Analayse de l'énoncé pour comprendre la demande et en extraire les besoins
 
 ### 2 : Page Brute
 
-Création du projet via l'IDE **Pycharm**, j'utilise le framework **Flask**
+Créatrion du projet via l'IDE **Pycharm**, j'utilise le framework **Flask**
 
 Je crée un template/fichier `base.html` où j'écrie en dure la page web
 
@@ -43,3 +43,12 @@ Je créer une version alternative de la page web en utilisant la librairie [Alpi
 Tout au longs du développement la page a été testé en local via un serveur de développement local inclut avec le framework **Flask**.
 
 Le site web est déliveré au client en uploadant le projet dans le dépot github [transformationDevOpsTP2](https://github.com/agaring/transformationDevOpsTP2)
+
+# Rendu 3.3 : Mise a jour du process
+
+1) Mise en place d'outil de trackage de temps
+2) Analyse de la demande, rédaction des besoins
+3) Utilisation d'outil de control de version (Git), création du dépot de l'application
+4) Création de la version static, marqué avec un tag comme `1.0`, le premier livrable est sur Git
+5) Mise en place de CI/CD pour automatiser les tests & et les livrable/déploiment
+6) Développement de la version dynamique, marqué `2.0`
