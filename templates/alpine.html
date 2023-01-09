@@ -112,14 +112,14 @@
 <h2>Données</h2>
 <ul id="dataList">
     <template x-for="d in data">
-        <li x-text="d.name + (d.description === undefined ? '' : ' : ' + d.description)"></li>
+        <li x-html="'<strong>' + d.name + '</strong>' + (d.description === undefined ? '' : ' : ' + d.description)"></li>
     </template>
 </ul>
 
 <h2>Processus</h2>
 <ul id="processList">
     <template x-for="p in process">
-        <li x-text="p.name + (p.description === undefined ? '' : ' : ' + p.description)"></li>
+        <li x-html="'<strong>' + p.name + '</strong>' + (p.description === undefined ? '' : ' : ' + p.description)"></li>
     </template>
 </ul>
 
