@@ -71,7 +71,7 @@ let companyData = {
         },
         {
             name: "Processus B54",
-            description: "Lorem Ipsum"
+            // description: "Lorem Ipsum"
         },
         {
             name: "Processus Z6",
@@ -115,12 +115,20 @@ function setData() {
     }
 }
 
+function setProcess() {
+    let processList = document.querySelector('#processList');
+    for (const process of companyData.process) {
+        processList.innerHTML += `<li><strong>${process.name}</strong>${process.description === undefined ? "" : " : " + process.description}</li>`
+    }
+}
+
 function init() {
     setCompanyName();
     setHumanResources();
     setMaterialResources();
     setSoftwareResources();
     setData();
+    setProcess();
 }
 
 window.addEventListener('load', init);
