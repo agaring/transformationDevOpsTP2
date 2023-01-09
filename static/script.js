@@ -1,5 +1,3 @@
-console.log('hello world')
-
 let companyData = {
     companyName: "New Horizon",
     rescources: {
@@ -78,7 +76,7 @@ let companyData = {
             description: "Lorem Ipsum"
         },
     ],
-}
+};
 
 function setCompanyName() {
     let companyNamePlaceholders = document.querySelectorAll('.companyName');
