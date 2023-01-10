@@ -1,0 +1,12 @@
+name: Test And Build Workflow
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "step test"
+  build:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "step build"
